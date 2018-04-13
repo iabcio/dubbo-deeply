@@ -28,33 +28,23 @@
     <dubbo:consumer check="false"/>
 
     <dubbo:protocol name="dubbo" port="20888" serialization="fst"/>
-    <dubbo:protocol name="rest" port="${application.port}" serialization="fst" contextpath="${application.contextpath}"
+    <dubbo:protocol name="rest" port="${application.port}" serialization="kryo" contextpath="${application.contextpath}"
                     server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}"
                     register="true"/>
 
     <dubbo:annotation package="io.iabc.dubbo.hey.service"/>
 
-    <!--<bean id="heyService" class="io.iabc.dubbo.demoa.service.stub.HeyServiceImpl"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="dubbo"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="rest"/>-->
+    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
+    <!--protocol="dubbo"/>-->
 
-    <!--<bean id="heyService" class="io.iabc.dubbo.demoa.service.stub.HeyServiceImpl"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="dubbo,rest"/>-->
+    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
+    <!--protocol="dubbo" url="dubbo://localhost:20887"/>-->
 
-    <!--<dubbo:reference id="ibService" interface="io.iabc.dubbo.demob.share.service.IbService" -->
-    <!--url="dubbo://localhost:20882"/>-->
-    <!--<dubbo:reference id="icService" interface="io.iabc.dubbo.democ.share.service.IcService" -->
-    <!--url="dubbo://localhost:20883"/>-->
+    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
+    <!--protocol="rest"/>-->
 
-    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.rest.hex.share.service.HexService" -->
-    <!--url="dubbo://localhost:20887"/>-->
+    <dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"
+                     protocol="rest" url="rest://localhost:8887/api/"/>
 
-    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.rest.hex.share.service.HexService" protocol="dubbo"/>-->
-
-    <dubbo:reference id="hexService" interface="io.iabc.dubbo.rest.hex.share.service.HexService"
-                     protocol="dubbo" url="dubbo://localhost:8887"/>
-
-    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.rest.hex.share.service.HexService" protocol="dubbo"-->
-                     <!--url="dubbo://localhost:20887"/>-->
 
 </beans>

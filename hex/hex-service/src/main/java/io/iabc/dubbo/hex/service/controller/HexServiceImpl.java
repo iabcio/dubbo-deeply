@@ -18,7 +18,7 @@
 
  import com.alibaba.dubbo.config.annotation.Service;
 
- import io.iabc.dubbo.rest.hex.share.service.HexService;
+ import io.iabc.dubbo.hex.share.service.HexService;
 
  /**
   * Project: dubbo-learning

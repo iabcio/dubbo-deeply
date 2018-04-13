@@ -29,21 +29,9 @@
 
     <dubbo:protocol name="dubbo" port="20887" serialization="fst"/>
     <dubbo:protocol name="rest" port="${application.port}" serialization="kryo" contextpath="${application.contextpath}"
-                    server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}" 
+                    server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}"
                     register="true"/>
 
     <dubbo:annotation package="io.iabc.dubbo.hex.service"/>
-    
-    <!--<bean id="heyService" class="io.iabc.dubbo.demoa.service.stub.HeyServiceImpl"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="dubbo"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="rest"/>-->
-
-    <!--<bean id="heyService" class="io.iabc.dubbo.demoa.service.stub.HeyServiceImpl"/>-->
-    <!--<dubbo:service interface="io.iabc.dubbo.demoa.share.service.HeyService" ref="heyService" protocol="dubbo,rest"/>-->
-
-    <!--<dubbo:reference id="ibService" interface="io.iabc.dubbo.demob.share.service.IbService" -->
-    <!--url="dubbo://localhost:20882"/>-->
-    <!--<dubbo:reference id="icService" interface="io.iabc.dubbo.democ.share.service.IcService" -->
-    <!--url="dubbo://localhost:20883"/>-->
 
 </beans>

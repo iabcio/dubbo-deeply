@@ -20,7 +20,7 @@
 
  import javax.annotation.Resource;
 
- import io.iabc.dubbo.rest.hex.share.service.HexService;
+ import io.iabc.dubbo.hex.share.service.HexService;
  import io.iabc.dubbo.hey.share.service.HeyService;
 
  /**

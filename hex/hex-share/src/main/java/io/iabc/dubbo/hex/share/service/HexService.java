@@ -14,7 +14,7 @@
   * limitations under the License.
   */
 
- package io.iabc.dubbo.rest.hex.share.service;
+ package io.iabc.dubbo.hex.share.service;
 
  import javax.ws.rs.Consumes;
  import javax.ws.rs.GET;
