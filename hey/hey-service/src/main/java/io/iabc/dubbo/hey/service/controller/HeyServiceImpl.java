@@ -31,7 +31,9 @@
   * @version V1.0
   * @since 2018-03-09 15:09
   */
- @Service(protocol = { "rest", "dubbo" }, timeout = 10000)
+ // @Service(protocol = { "rest", "dubbo" }, timeout = 900000)
+ @Service(protocol = { "rest" }, timeout = 900000)
+ // @Service(protocol = { "dubbo" }, timeout = 900000)
  public class HeyServiceImpl implements HeyService {
 
      @Resource
@@ -41,11 +43,6 @@
      public String test() {
          String invokeResult = hexService.echoSimple("invoke hexService");
          return invokeResult;
-     }
-
-     @Override
-     public String status() {
-         return "ok";
      }
 
      @Override

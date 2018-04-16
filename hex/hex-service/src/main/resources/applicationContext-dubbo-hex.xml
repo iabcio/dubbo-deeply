@@ -27,7 +27,7 @@
     <dubbo:registry address="${application.registry.address}" register="false" group="iabc"/>
     <dubbo:consumer check="false"/>
 
-    <dubbo:protocol name="dubbo" port="20887" serialization="fst"/>
+    <dubbo:protocol name="dubbo" port="20887" serialization="fst" transporter="netty4"/>
     <dubbo:protocol name="rest" port="${application.port}" serialization="kryo" contextpath="${application.contextpath}"
                     server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}"
                     register="true"/>

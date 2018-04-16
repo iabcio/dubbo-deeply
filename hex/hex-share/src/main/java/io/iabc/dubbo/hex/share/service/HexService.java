@@ -37,10 +37,6 @@
  public interface HexService {
 
      @GET
-     @Path("status")
-     String status();
-
-     @GET
      @Path("echoSimple")
      String echoSimple(@QueryParam("msg") String msg);
  }

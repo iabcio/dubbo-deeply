@@ -41,10 +41,6 @@
      String test();
 
      @GET
-     @Path("status")
-     String status();
-
-     @GET
      @Path("hello")
      String hello(@QueryParam("msg") String msg);
 

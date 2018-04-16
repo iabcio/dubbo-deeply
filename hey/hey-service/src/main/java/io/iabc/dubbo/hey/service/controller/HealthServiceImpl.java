@@ -14,11 +14,11 @@
   * limitations under the License.
   */
 
- package io.iabc.dubbo.hex.service.controller;
+ package io.iabc.dubbo.hey.service.controller;
 
  import com.alibaba.dubbo.config.annotation.Service;
 
- import io.iabc.dubbo.hex.share.service.HexService;
+ import io.iabc.dubbo.hey.share.service.HealthService;
 
  /**
   * Project: dubbo-learning
@@ -26,16 +26,13 @@
   *
   * @author <a href="mailto:h@iabc.io">shuchen</a>
   * @version V1.0
-  * @since 2018-03-09 15:08
+  * @since 2018-03-09 15:09
   */
- // @Service(protocol = { "rest", "dubbo" }, timeout = 900000)
- // @Service(protocol = { "rest" }, timeout = 900000)
- @Service(protocol = { "dubbo" }, timeout = 900000)
- public class HexServiceImpl implements HexService {
+ @Service(protocol = { "rest" }, timeout = 10000)
+ public class HealthServiceImpl implements HealthService {
 
      @Override
-     public String echoSimple(String msg) {
-         return msg;
+     public String status() {
+         return "ok";
      }
-
  }

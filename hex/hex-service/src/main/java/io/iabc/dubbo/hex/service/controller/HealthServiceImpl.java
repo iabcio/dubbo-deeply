@@ -18,7 +18,7 @@
 
  import com.alibaba.dubbo.config.annotation.Service;
 
- import io.iabc.dubbo.hex.share.service.HexService;
+ import io.iabc.dubbo.hex.share.service.HealthService;
 
  /**
   * Project: dubbo-learning
@@ -28,14 +28,11 @@
   * @version V1.0
   * @since 2018-03-09 15:08
   */
- // @Service(protocol = { "rest", "dubbo" }, timeout = 900000)
- // @Service(protocol = { "rest" }, timeout = 900000)
- @Service(protocol = { "dubbo" }, timeout = 900000)
- public class HexServiceImpl implements HexService {
+ @Service(protocol = { "rest" }, timeout = 10000)
+ public class HealthServiceImpl implements HealthService {
 
      @Override
-     public String echoSimple(String msg) {
-         return msg;
+     public String status() {
+         return "ok";
      }
-
  }

@@ -14,11 +14,13 @@
   * limitations under the License.
   */
 
- package io.iabc.dubbo.hex.service.controller;
+ package io.iabc.dubbo.hey.share.service;
 
- import com.alibaba.dubbo.config.annotation.Service;
-
- import io.iabc.dubbo.hex.share.service.HexService;
+ import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
  /**
   * Project: dubbo-learning
@@ -26,16 +28,15 @@
   *
   * @author <a href="mailto:h@iabc.io">shuchen</a>
   * @version V1.0
-  * @since 2018-03-09 15:08
+  * @since 2018-03-09 15:05
   */
- // @Service(protocol = { "rest", "dubbo" }, timeout = 900000)
- // @Service(protocol = { "rest" }, timeout = 900000)
- @Service(protocol = { "dubbo" }, timeout = 900000)
- public class HexServiceImpl implements HexService {
+ @Path("health")
+ @Consumes({ MediaType.APPLICATION_JSON })
+ @Produces({ MediaType.APPLICATION_JSON })
+ public interface HealthService {
 
-     @Override
-     public String echoSimple(String msg) {
-         return msg;
-     }
+     @GET
+     @Path("status")
+     String status();
 
  }

@@ -37,14 +37,14 @@
     <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
     <!--protocol="dubbo"/>-->
 
-    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
-    <!--protocol="dubbo" url="dubbo://localhost:20887"/>-->
+    <dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"
+                     protocol="dubbo" url="dubbo://localhost:20887"/>
 
     <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
     <!--protocol="rest"/>-->
 
-    <dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"
-                     protocol="rest" url="rest://localhost:8887/api/"/>
+    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
+    <!--protocol="rest" url="rest://localhost:8887/api/"/>-->
 
 
 </beans>
