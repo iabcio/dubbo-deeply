@@ -27,18 +27,18 @@
     <dubbo:registry address="${application.registry.address}" register="false" group="iabc"/>
     <dubbo:consumer check="false"/>
 
-    <dubbo:protocol name="dubbo" port="20888" serialization="fst"/>
+    <dubbo:protocol name="dubbo" port="20888" serialization="fst" heartbeat="600000"/>
     <dubbo:protocol name="rest" port="${application.port}" serialization="kryo" contextpath="${application.contextpath}"
                     server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}"
-                    register="true"/>
+                    register="true" heartbeat="600000"/>
 
     <dubbo:annotation package="io.iabc.dubbo.hey.service"/>
 
-    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
-    <!--protocol="dubbo"/>-->
-
     <dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"
-                     protocol="dubbo" url="dubbo://localhost:20887"/>
+                     protocol="dubbo"/>
+
+    <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
+    <!--protocol="dubbo" url="dubbo://localhost:20887" timeout="900000"/>-->
 
     <!--<dubbo:reference id="hexService" interface="io.iabc.dubbo.hex.share.service.HexService"-->
     <!--protocol="rest"/>-->

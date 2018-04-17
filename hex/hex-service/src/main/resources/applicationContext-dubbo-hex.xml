@@ -24,13 +24,13 @@
        default-autowire="byName" default-lazy-init="false">
     <dubbo:application name="${application.name}" owner="${application.owner}" organization="iabc-inc"/>
 
-    <dubbo:registry address="${application.registry.address}" register="false" group="iabc"/>
+    <dubbo:registry address="${application.registry.address}" register="true" group="iabc"/>
     <dubbo:consumer check="false"/>
 
-    <dubbo:protocol name="dubbo" port="20887" serialization="fst" transporter="netty4"/>
+    <dubbo:protocol name="dubbo" port="20887" serialization="fst" transporter="netty4" heartbeat="600000"/>
     <dubbo:protocol name="rest" port="${application.port}" serialization="kryo" contextpath="${application.contextpath}"
-                    server="tomcat" threads="${application.concurrence}" accepts="${application.concurrence}"
-                    register="true"/>
+                    server="netty" threads="${application.concurrence}" accepts="${application.concurrence}"
+                    register="true" heartbeat="600000"/>
 
     <dubbo:annotation package="io.iabc.dubbo.hex.service"/>
 
